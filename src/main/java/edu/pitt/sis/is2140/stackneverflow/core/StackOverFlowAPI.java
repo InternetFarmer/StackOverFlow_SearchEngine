@@ -99,6 +99,7 @@ public class StackOverFlowAPI {
             a_api.addQuestionid(String.valueOf(questionID));
         }
         GetMethod getMethod = new GetMethod(a_api.getURL());
+        System.out.println(a_api.getURL());
 
         // receive and decode response
         String response = null;

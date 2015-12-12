@@ -106,7 +106,7 @@ public class Answer implements Serializable, Comparable<Answer> {
 
     @Override
     public String toString() {
-        return "Answer{" + "answer_id=" + answer_id + ", is_accepted=" + is_accepted + ", score=" + score + ", link=" + link + '}';
+        return "Answer{" + "answer_id=" + answer_id + ", is_accepted=" + is_accepted + ", score=" + score + ", creation_date=" + creation_date + ", owner=" + owner + ", last_editor=" + last_editor + '}';
     }
 
     @Override

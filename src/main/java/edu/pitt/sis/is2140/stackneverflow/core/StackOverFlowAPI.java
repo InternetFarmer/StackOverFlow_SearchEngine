@@ -169,12 +169,14 @@ public class StackOverFlowAPI {
                     
                     // set creation date
                     long creation_date = answerObj.getLong("creation_date");
-                    String date = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date(creation_date));                 
+                    String date = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date(creation_date * 1000));                 
                     answer.setCreation_date(date);
                     
                     max_answer_score = Math.max(max_answer_score, answerObj.getInt("score"));
                     
                     answerList.add(answer);
+                    
+//                    System.out.println(answer.toString());
                 }
             }
             
@@ -195,6 +197,7 @@ public class StackOverFlowAPI {
      * @param args
      */
     public static void main(String[] args) throws Exception {
-        
+        StackOverFlowAPI api = new StackOverFlowAPI();
+        api.searchRelevantAnswer("hash map", "java");
     }
 }

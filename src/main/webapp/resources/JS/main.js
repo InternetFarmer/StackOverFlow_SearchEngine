@@ -57,7 +57,7 @@ var MyModel = function () {
 
     //send get request to the server and
     self.searchAnswer = function () {
-        console.log(self.Tags());
+        //console.log(self.Tags());
         var tags = encodeTag(self.Tags());
 
         console.log(self.SearchTerm());
@@ -68,6 +68,6 @@ var MyModel = function () {
                 self.Answers(mappedAnswers(data));
             });
         }
-        console.log(self.Answers());
+        //console.log(self.Answers());
     };
 };

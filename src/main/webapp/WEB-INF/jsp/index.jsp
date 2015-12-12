@@ -47,7 +47,7 @@
                         <input class="form-control" type="text" id="formGroupInputLarge" placeholder="Search Key Words.." data-bind="value: SearchTerm">
                     </div>
                     <div class="col-sm-2">
-                        <button type="button" class="btn btn-primary center-block" data-bind="click: searchAnswer">Smart Search</button>
+                        <button type="button" autocomplete="off" class="btn btn-primary center-block" data-bind="click: searchAnswer">Smart Search</button>
                     </div>
                 </div>
                 <br />
@@ -90,15 +90,18 @@
                                 <a onclick="shelter()" data-bind="html: question.title()"></a>
                             </div>
                             <div class="col-sm-2">
-                                <span class="label label-success">Score: 8.8</span>
+                                <span class="label label-success center-block" data-bind="text: 'Score: '+ score()"></span>
                             </div>
                         </div>
                     </div>
                     <div class="panel-body" data-bind="html: body">question content 
                     </div>
                     <div class="panel-footer">
-                        <span class="label label-info" data-bind="text: 'Owner:'+ owner"></span> 
-                        <span class="label label-warning">Date: 2008-09-09</span>
+                        <span class="label label-info" data-bind="text: 'Owner: '+ owner"></span>
+                        <!-- ko if: editor !== null -->
+                        <span class="label label-info" data-bind="text: 'Editor: '+ editor"></span> 
+                        <!-- /ko -->
+                        <span class="label label-warning" data-bind="text: 'Date: ' + date"></span>
                     </div>
                 </div>
             </div>

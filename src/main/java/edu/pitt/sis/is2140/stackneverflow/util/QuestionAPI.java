@@ -20,9 +20,11 @@ public class QuestionAPI {
     private String answers = "1";
     private String site = "stackoverflow";
     private String key = "";
+    private String tags = "";
 
-    public QuestionAPI(String key) {
+    public QuestionAPI(String key, String tags) {
         this.key = key;
+        this.tags = tags;
     }
 
     public void setOrder(String order) {
@@ -44,7 +46,11 @@ public class QuestionAPI {
     public void setKey(String key) {
         this.key = key;
     }
-    
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
     public String getURL() throws UnsupportedEncodingException {
         StringBuilder sb = new StringBuilder();
         sb.append(SEARCHADVANCEDAPI);
@@ -56,8 +62,10 @@ public class QuestionAPI {
         sb.append(answers);
         sb.append("&site=");
         sb.append(site);
+        sb.append("&tagged=");
+        sb.append(tags);
         sb.append("&q=");
-        sb.append( URLEncoder.encode(key,"UTF-8"));
+        sb.append(URLEncoder.encode(key, "UTF-8"));
         return sb.toString();
     }
 

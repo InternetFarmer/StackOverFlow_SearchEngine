@@ -57,12 +57,12 @@ var MyModel = function () {
 
     //send get request to the server and
     self.searchAnswer = function () {
-        //console.log(self.Tags());
+        console.log(self.Tags());
         var tags = encodeTag(self.Tags());
 
         console.log(self.SearchTerm());
         if (self.SearchTerm() !== "") {
-            $.getJSON("rest/answers/search?key=" + escape(self.SearchTerm()) + (tags.length > 0) ? ("&tags=" + tags) : "", function (data) {
+            $.getJSON("rest/answers/search?key=" + escape(self.SearchTerm()) + ((tags.length > 0) ? ("&tags=" + tags) : ""), function (data) {
                 console.log(data);
                 self.Answers(mappedAnswers(data));
             });

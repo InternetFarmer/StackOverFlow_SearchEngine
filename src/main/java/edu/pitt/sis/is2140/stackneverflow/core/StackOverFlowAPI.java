@@ -45,8 +45,8 @@ public class StackOverFlowAPI {
      * @return
      * @throws org.json.JSONException
      */
-    public List<Answer> searchRelevantAnswer(String key) throws Exception {
-        QuestionAPI q_api = new QuestionAPI(key);
+    public List<Answer> searchRelevantAnswer(String key, String tags) throws Exception {
+        QuestionAPI q_api = new QuestionAPI(key, tags);
         GetMethod getMethod = new GetMethod(q_api.getURL());
         Map<Integer, Integer> rank = new HashMap();
         System.out.println(q_api.getURL());
@@ -195,7 +195,6 @@ public class StackOverFlowAPI {
      * @param args
      */
     public static void main(String[] args) throws Exception {
-        StackOverFlowAPI.getINSTANCE().searchRelevantAnswer("JAVA");
         
     }
 }

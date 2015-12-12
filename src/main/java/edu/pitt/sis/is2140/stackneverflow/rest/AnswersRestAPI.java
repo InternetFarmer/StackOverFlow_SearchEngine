@@ -42,15 +42,16 @@ public class AnswersRestAPI {
      * @throws org.json.JSONException
      */
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public @ResponseBody List<Answer> searchAnswers(@RequestParam("key") String key) throws JSONException, Exception {
+    public @ResponseBody
+    List<Answer> searchAnswers(@RequestParam("key") String key, @RequestParam("tags") String tags) throws JSONException, Exception {
         List<Answer> input = null;
         List<Answer> res = null;
         System.out.println("rest API: key=" + key);
-        if (key.length() != 0) { 
-            input = StackOverFlowAPI.getINSTANCE().searchRelevantAnswer(key.trim());
+        if (key.length() != 0) {
+            input = StackOverFlowAPI.getINSTANCE().searchRelevantAnswer(key.trim(), tags);
             res = AnswerRanking.ranking(input);
         }
-        
+
         return res;
     }
 

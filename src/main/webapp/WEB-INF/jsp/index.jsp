@@ -44,7 +44,7 @@
             <div class="content">
                 <div class="row">
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" id="formGroupInputLarge" placeholder="Search Key Words.." data-bind="value: SearchTerm, valueUpdate: 'afterkeydown'">
+                        <input class="form-control" type="text" id="formGroupInputLarge" placeholder="Search Key Words.." data-bind="value: SearchTerm">
                     </div>
                     <div class="col-sm-2">
                         <button type="button" class="btn btn-primary center-block" data-bind="click: searchAnswer">Smart Search</button>

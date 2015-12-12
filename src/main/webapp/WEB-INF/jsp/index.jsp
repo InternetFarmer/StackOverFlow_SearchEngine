@@ -87,9 +87,11 @@
                     <div class="panel-heading">
                         <a onclick="shelter()" data-bind="html: question.title()"></a>
                     </div>
-                    <div class="panel-body" data-bind="html: body">question content 
+                      <span class="label label-success">Score: 8.8</span> &nbsp;<div class="panel-body" data-bind="html: body">question content 
                     </div>
-                    <div class="panel-footer">date
+                    <div class="panel-footer">
+                    <br/>
+<span class="label label-info">Author: yanyan</span> <span class="label label-warning">Date: 2008-09-09</span>
                     </div>
                 </div>
             </div>

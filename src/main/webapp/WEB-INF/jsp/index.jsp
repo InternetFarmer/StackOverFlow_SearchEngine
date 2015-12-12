@@ -54,25 +54,31 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <label class="checkbox-inline">
-                            <input type="checkbox" value="java" data-bind="checked: Tags"> java
+                            <input type="checkbox" value="javascript" data-bind="checked: Tags"> javascript
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" value="c" data-bind="checked: Tags"> c/c++
+                            <input type="checkbox" value="java" data-bind="checked: Tags"> java
                         </label>
                         <label class="checkbox-inline">
                             <input type="checkbox" value="php" data-bind="checked: Tags"> php
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" value="html" data-bind="checked: Tags"> html
+                            <input type="checkbox" value="android" data-bind="checked: Tags"> android
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" value="jquery" data-bind="checked: Tags"> jquery
                         </label>
                         <label class="checkbox-inline">
                             <input type="checkbox" value="python" data-bind="checked: Tags"> python
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" value="javascript" data-bind="checked: Tags"> javascript
+                            <input type="checkbox" value="html" data-bind="checked: Tags"> html
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" value="jquery" data-bind="checked: Tags"> jquery
+                            <input type="checkbox" value="c" data-bind="checked: Tags"> c
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" value="ios" data-bind="checked: Tags"> ios
                         </label>
                         <label class="checkbox-inline">
                             <input type="checkbox" value="mysql" data-bind="checked: Tags"> mysql
@@ -87,7 +93,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-sm-10">
-                                <a onclick="shelter()" data-bind="html: question.title()"></a>
+                                <a data-bind="attr: { href: link()}, html: question.title()" target="_blank"></a>
                             </div>
                             <div class="col-sm-2">
                                 <span class="label label-success center-block" data-bind="text: 'Score: '+ score()"></span>

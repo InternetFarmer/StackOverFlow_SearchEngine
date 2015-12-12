@@ -57,7 +57,7 @@
                             <input type="checkbox" value="java" data-bind="checked: Tags"> java
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" value="c/c++" data-bind="checked: Tags"> c/c++
+                            <input type="checkbox" value="c" data-bind="checked: Tags"> c/c++
                         </label>
                         <label class="checkbox-inline">
                             <input type="checkbox" value="php" data-bind="checked: Tags"> php

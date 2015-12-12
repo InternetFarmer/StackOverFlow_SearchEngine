@@ -44,7 +44,7 @@
             <div class="content">
                 <div class="row">
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" id="formGroupInputLarge" placeholder="Search Key Words.." data-bind="value: SearchTerm">
+                        <input class="form-control" type="text" id="formGroupInputLarge" placeholder="Search Key Words.." data-bind="value: SearchTerm, valueUpdate: 'afterkeydown'">
                     </div>
                     <div class="col-sm-2">
                         <button type="button" class="btn btn-primary center-block" data-bind="click: searchAnswer">Smart Search</button>
@@ -54,28 +54,28 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <label class="checkbox-inline">
-                            <input type="checkbox" id="inlineCheckbox1" value="option1"> java
+                            <input type="checkbox" value="java" data-bind="checked: Tags"> java
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" id="inlineCheckbox2" value="option2"> c/c++
+                            <input type="checkbox" value="c/c++" data-bind="checked: Tags"> c/c++
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" id="inlineCheckbox3" value="option3"> php
+                            <input type="checkbox" value="php" data-bind="checked: Tags"> php
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" id="inlineCheckbox3" value="option3"> html
+                            <input type="checkbox" value="html" data-bind="checked: Tags"> html
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" id="inlineCheckbox3" value="option3"> python
+                            <input type="checkbox" value="python" data-bind="checked: Tags"> python
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" id="inlineCheckbox3" value="option3"> javascript
+                            <input type="checkbox" value="javascript" data-bind="checked: Tags"> javascript
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" id="inlineCheckbox3" value="option3"> jquery
+                            <input type="checkbox" value="jquery" data-bind="checked: Tags"> jquery
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" id="inlineCheckbox3" value="option3"> mysql
+                            <input type="checkbox" value="mysql" data-bind="checked: Tags"> mysql
                         </label>
                     </div>
                 </div>
@@ -85,13 +85,20 @@
             <div id="qbox">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a onclick="shelter()" data-bind="html: question.title()"></a>
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <a onclick="shelter()" data-bind="html: question.title()"></a>
+                            </div>
+                            <div class="col-sm-2">
+                                <span class="label label-success">Score: 8.8</span>
+                            </div>
+                        </div>
                     </div>
-                      <span class="label label-success">Score: 8.8</span> &nbsp;<div class="panel-body" data-bind="html: body">question content 
+                    <div class="panel-body" data-bind="html: body">question content 
                     </div>
                     <div class="panel-footer">
-                    <br/>
-<span class="label label-info">Author: yanyan</span> <span class="label label-warning">Date: 2008-09-09</span>
+                        <span class="label label-info" data-bind="text: 'Owner:'+ owner"></span> 
+                        <span class="label label-warning">Date: 2008-09-09</span>
                     </div>
                 </div>
             </div>
@@ -149,7 +156,7 @@
         <script type="text/javascript" src = 'resources/JS/main.js'></script>
         <script type="text/javascript" src="resources/JS/front.js"></script>
         <script type="text/javascript">
-                            ko.applyBindings(new MyModel());
+                                    ko.applyBindings(new MyModel());
         </script>
     </body>
 </html>

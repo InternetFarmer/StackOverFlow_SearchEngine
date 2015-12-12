@@ -1,4 +1,4 @@
-function Answer(e, f, g, h, i, j, k) {
+function Answer(e, f, g, h, i, j, k, l, m, n) {
     this.answer_id = ko.observable(e);
     this.question_id = ko.observable(f);
     this.is_accepted = ko.observable(g);
@@ -6,6 +6,9 @@ function Answer(e, f, g, h, i, j, k) {
     this.body = i;
     this.link = ko.observable(j);
     this.question = k;
+    this.date = l;
+    this.owner = m;
+    this.editor = n;
 }
 
 function Question(e, f, g, h, i, j, k, l) {
@@ -25,8 +28,20 @@ var mappedAnswers = function (data) {
         var q = new Question(answer.question.answer_count, answer.question.body, answer.question.is_answered,
                 answer.question.link, answer.question.question_id, answer.question.score, answer.question.title,
                 answer.question.view_count);
-        return new Answer(answer.answer_id, answer.question_id, answer.is_accepted, answer.score, answer.body, answer.link, q);
+        return new Answer(answer.answer_id, answer.question_id, answer.is_accepted, answer.score, answer.body, answer.link, q,
+                answer.creation_date, answer.owner, answer.last_editor);
     });
+};
+
+var encodeTag = function (tags) {
+    var str = "";
+    for (var i = 0; i < tags.length - 1; i++) {
+        str += tags[i] + ";"
+    }
+    if (tags.length >= 1) {
+        str += tags[tags.length - 1];
+    }
+    return str;
 };
 
 var MyModel = function () {
@@ -37,16 +52,21 @@ var MyModel = function () {
 
     self.SearchTerm = ko.observable("");
 
+    self.Tags = ko.observableArray("");
 
 
     //send get request to the server and
     self.searchAnswer = function () {
+        //console.log(self.Tags());
+        var tags = encodeTag(self.Tags());
+
+        console.log(self.SearchTerm());
         if (self.SearchTerm() !== "") {
-            $.getJSON("rest/answers/search?key=" + escape(self.SearchTerm()), function (data) {
+            $.getJSON("rest/answers/search?key=" + escape(self.SearchTerm()) + (tags.length > 0) ? ("&tags=" + tags) : "", function (data) {
+                console.log(data);
                 self.Answers(mappedAnswers(data));
             });
         }
-
         console.log(self.Answers());
     };
 };

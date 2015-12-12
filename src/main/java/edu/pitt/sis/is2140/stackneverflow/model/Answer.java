@@ -22,6 +22,10 @@ public class Answer implements Serializable, Comparable<Answer> {
     private double normalized_score;
     private String body;
     private String link;
+    private String creation_date;
+    
+    private String owner;
+    private String last_editor;
 
     public Answer(int answer_id, Question question) {
         this.answer_id = answer_id;
@@ -68,6 +72,30 @@ public class Answer implements Serializable, Comparable<Answer> {
         this.link = link;
     }
 
+    public String getCreation_date() {
+        return creation_date;
+    }
+
+    public void setCreation_date(String creation_date) {
+        this.creation_date = creation_date;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public String getLast_editor() {
+        return last_editor;
+    }
+
+    public void setLast_editor(String last_editor) {
+        this.last_editor = last_editor;
+    }
+    
     public double getNormalized_score() {
         return normalized_score;
     }

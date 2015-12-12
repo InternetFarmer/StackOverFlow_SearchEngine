@@ -13,7 +13,7 @@ public class AnswerAPI {
 
     private static final String SEARCHADVANCEDAPI = "https://api.stackexchange.com/2.2/questions/";
     private String questionID = "";
-    private String filter = "!)rh-4RYRj-SAZntA1WTu";
+    private String filter = "!4(lXB30H_c--AK**e";
     private String site = "stackoverflow";
     private String order = "desc";
     private String sort = "activity";

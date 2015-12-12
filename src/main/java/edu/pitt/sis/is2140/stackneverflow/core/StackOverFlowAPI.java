@@ -157,6 +157,17 @@ public class StackOverFlowAPI {
                     answer.setLink(answerObj.getString("link"));
                     answer.setBody(answerObj.getString("body"));
                     
+                    // set owner & editor
+                    answer.setOwner(answerObj.getJSONObject("owner").getString("display_name"));
+                    if(answerObj.has("last_editor")){
+                        answer.setLast_editor(answerObj.getJSONObject("last_editor").getString("display_name"));
+                    }
+                    
+                    // set creation date
+                    long creation_date = answerObj.getLong("creation_date");
+                    String date = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date(creation_date));
+                    answer.setCreation_date(date);
+                    
                     max_answer_score = Math.max(max_answer_score, answerObj.getInt("score"));
                     
                     answerList.add(answer);

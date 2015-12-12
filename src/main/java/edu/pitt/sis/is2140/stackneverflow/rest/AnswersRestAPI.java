@@ -38,6 +38,7 @@ public class AnswersRestAPI {
      * Search Answers
      *
      * @param key
+     * @param tags
      * @return list of answers
      * @throws org.json.JSONException
      */

@@ -62,7 +62,7 @@ var MyModel = function () {
 
         console.log(self.SearchTerm());
         if (self.SearchTerm() !== "") {
-            $.getJSON("rest/answers/search?key=" + escape(self.SearchTerm()) + ((tags.length > 0) ? ("&tags=" + tags) : ""), function (data) {
+            $.getJSON("rest/answers/search?key=" + escape(self.SearchTerm()) + "&tags=" + tags, function (data) {
                 console.log(data);
                 self.Answers("");
                 self.Answers(mappedAnswers(data));

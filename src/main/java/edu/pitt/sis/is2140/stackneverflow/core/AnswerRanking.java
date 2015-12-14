@@ -5,7 +5,6 @@ package edu.pitt.sis.is2140.stackneverflow.core;
 
 import edu.pitt.sis.is2140.stackneverflow.config.RankingModel;
 import edu.pitt.sis.is2140.stackneverflow.model.Answer;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,7 +20,7 @@ public class AnswerRanking {
      * Sort answer list based on different parameters
      *
      * @param input
-     * @return 
+     * @return
      */
     public static List<Answer> ranking(List<Answer> input) {
         PriorityQueue<Answer> heap = new PriorityQueue(new Comparator<Answer>() {

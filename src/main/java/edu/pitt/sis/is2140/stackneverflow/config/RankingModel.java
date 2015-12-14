@@ -10,10 +10,20 @@ package edu.pitt.sis.is2140.stackneverflow.config;
  * @author Wu
  */
 public class RankingModel {
-    public static final double rank_weight = 0.7;
+    //Stack Neverflow
+    public static final double rank_weight = 0.70;
     public static final double view_count_weight = 0.05;
-    public static final double question_score_weight = 0.1;
+    public static final double question_score_weight = 0.10;
     public static final double is_accepted_weight = 0.05;
-    public static final double answer_score_weight = 0.1;
+    public static final double answer_score_weight = 0.10;
     public static final double accept_percentage = 0.4;
+    
+    // Stack Overflow
+//    public static final double rank_weight = 100000;
+//    public static final double view_count_weight = 0;
+//    public static final double question_score_weight = 0;
+//    public static final double is_accepted_weight = 0;
+//    public static final double answer_score_weight = 1;
+//    public static final double accept_percentage = 1;
+    
 }

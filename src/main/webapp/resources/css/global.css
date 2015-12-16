@@ -52,3 +52,8 @@ a {
 	position: absolute;
 	left:120px;
 }
+
+
+img {
+    max-width: 100%;
+}

@@ -13,6 +13,7 @@
         <link rel="stylesheet" type="text/css" href="resources/css/introduction.css" />
     </head>
     <body>
+    <a name="top"></a>
         <!--header-->
         <!--main-->
         <div id="main">
@@ -143,7 +144,7 @@
                     </ul>
                 </div>
             </a>
-            <a href="javascript:;" class="toolbar-item toolbar-item-top"></a>
+            <a href="#top"  class="toolbar-item toolbar-item-top"></a>
         </div>
 
         <!--footer-->
